@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const serviceCategories = [
+  {
+    id: 'hair-cut',
+    title: 'Hair — Cut & Style',
+    services: [
+      { name: "Women's Cut & Blowdry", desc: 'Consultation, wash, precision cut, and styled finish', price: 'from $95' },
+      { name: "Men's Cut", desc: 'Consultation, wash, and precision cut', price: 'from $55' },
+      { name: "Children's Cut (under 12)", desc: 'Wash and cut', price: 'from $40' },
+      { name: 'Blowdry & Style', desc: 'Wash and professional blowdry or styled finish', price: 'from $65' },
+      { name: 'Special Occasion Style', desc: 'Formal, bridal party, or event styling', price: 'from $120' },
+      { name: 'Fringe Trim', desc: 'Quick trim between appointments', price: '$20' },
+    ],
+  },
+  {
+    id: 'hair-colour',
+    title: 'Hair — Colour',
+    services: [
+      { name: 'Full Colour', desc: 'Root to tip single-process colour', price: 'from $150' },
+      { name: 'Root Touch-Up', desc: 'Regrowth colour, same shade', price: 'from $110' },
+      { name: 'Half Head Foils', desc: 'Partial highlights for dimension and brightness', price: 'from $180' },
+      { name: 'Full Head Foils', desc: 'Complete highlight or lowlight service', price: 'from $250' },
+      { name: 'Balayage / Ombré', desc: 'Hand-painted colour for a natural, lived-in finish', price: 'from $280' },
+      { name: 'Colour Correction', desc: 'Complex colour fixes priced on consultation', price: 'from $350' },
+      { name: 'Toner / Gloss', desc: 'Refresh tone and add shine between colour services', price: 'from $60' },
+    ],
+  },
+  {
+    id: 'hair-treatments',
+    title: 'Hair — Treatments & Extensions',
+    services: [
+      { name: 'Olaplex Treatment', desc: 'Bond repair and strengthening, added to any service', price: '$45' },
+      { name: 'Keratin Smoothing', desc: 'Anti-frizz treatment lasting 3-5 months', price: 'from $350' },
+      { name: 'Scalp Treatment', desc: 'Detox, hydrate, and balance your scalp', price: 'from $60' },
+      { name: 'Tape Extensions', desc: 'Natural-looking volume and length, per pack', price: 'from $350' },
+      { name: 'Micro-Link Extensions', desc: 'Individual strand application for seamless blending', price: 'from $500' },
+      { name: 'Extension Maintenance', desc: 'Move-up, tighten, and restyle', price: 'from $150' },
+    ],
+  },
+  {
+    id: 'skin',
+    title: 'Skin',
+    services: [
+      { name: 'Express Facial (30 min)', desc: 'Quick cleanse, exfoliation, and hydration boost', price: '$80' },
+      { name: 'Signature Facial (60 min)', desc: 'Full treatment customised to your skin type and concerns', price: '$150' },
+      { name: 'Advanced Peel', desc: 'Clinical-grade chemical peel for resurfacing and renewal', price: 'from $180' },
+      { name: 'LED Light Therapy', desc: 'Add-on or standalone treatment for acne, redness, or rejuvenation', price: '$60' },
+      { name: 'Microdermabrasion', desc: 'Mechanical exfoliation for smoother, brighter skin', price: '$140' },
+      { name: 'Dermaplaning', desc: 'Remove peach fuzz and dead skin for a flawless canvas', price: '$100' },
+    ],
+  },
+  {
+    id: 'nails',
+    title: 'Nails',
+    services: [
+      { name: 'Classic Manicure', desc: 'Shape, cuticle care, and polish', price: '$45' },
+      { name: 'Gel Manicure', desc: 'Long-lasting gel polish with LED cure', price: '$60' },
+      { name: 'Classic Pedicure', desc: 'Foot soak, exfoliation, cuticle care, and polish', price: '$55' },
+      { name: 'Gel Pedicure', desc: 'Gel polish pedicure with full foot treatment', price: '$75' },
+      { name: 'Nail Art', desc: 'Custom designs, per nail', price: 'from $5' },
+      { name: 'Gel Removal', desc: 'Safe soak-off and nail conditioning', price: '$20' },
+    ],
+  },
+  {
+    id: 'lashes-brows',
+    title: 'Lashes & Brows',
+    services: [
+      { name: 'Lash Lift & Tint', desc: 'Natural lift and colour for 6-8 weeks', price: '$95' },
+      { name: 'Classic Lash Extensions', desc: 'Individual lash application for a natural enhancement', price: 'from $150' },
+      { name: 'Volume Lash Extensions', desc: 'Full, dramatic fan sets', price: 'from $200' },
+      { name: 'Lash Infill', desc: 'Maintenance fill within 3 weeks', price: 'from $75' },
+      { name: 'Brow Shape', desc: 'Wax or tweeze to your ideal shape', price: '$30' },
+      { name: 'Brow Tint', desc: 'Colour to define and fill', price: '$25' },
+      { name: 'Brow Lamination', desc: 'Brushed-up, feathered brow effect lasting 6 weeks', price: '$75' },
+    ],
+  },
+];
+
+const products = [
+  { name: 'Olaplex', desc: 'Bond repair for damaged hair', image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&h=400&fit=crop', alt: 'Professional Olaplex hair repair products on a clean background' },
+  { name: 'Aspect Skincare', desc: 'Clinical-grade Australian skincare', image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=400&fit=crop', alt: 'Premium skincare products arranged elegantly' },
+  { name: 'OPI', desc: 'Professional nail colour and treatments', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=400&fit=crop', alt: 'Colourful OPI nail polish bottles arranged in a row' },
+  { name: 'Kevin Murphy', desc: 'Sustainable, salon-quality hair care', image: 'https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=600&h=400&fit=crop', alt: 'Kevin Murphy sustainable hair care products on display' },
+];
+---
+
+<Layout title="Services & Pricing — LUMA Hair & Beauty">
+
+  <!-- Page Header -->
+  <section class="pt-16 pb-12 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 mb-6">
+        <span class="w-8 h-px bg-gold"></span>
+        <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Full Menu</span>
+        <span class="w-8 h-px bg-gold"></span>
+      </span>
+      <h1 class="font-serif text-5xl sm:text-6xl font-light tracking-wide mb-6">Services & Pricing</h1>
+      <p class="text-rich-black/60 max-w-xl mx-auto leading-relaxed">
+        Explore our full menu. All prices are starting from — your stylist will provide a personalised quote at your consultation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Categories -->
+  <section class="pb-24 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="space-y-4">
+        {serviceCategories.map((category) => (
+          <div class="service-category border border-nude/50 rounded-3xl overflow-hidden bg-white/50 backdrop-blur-sm">
+            <button
+              class="service-toggle w-full flex items-center justify-between px-8 py-6 text-left hover:bg-blush/50 transition-colors duration-300"
+              data-target={category.id}
+              aria-expanded="false"
+            >
+              <h2 class="font-serif text-2xl tracking-wide">{category.title}</h2>
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-rich-black/40 tracking-wider uppercase hidden sm:block">{category.services.length} services</span>
+                <svg class="service-chevron w-5 h-5 text-gold transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </button>
+            <div id={category.id} class="service-content">
+              <div>
+                <div class="px-8 pb-8">
+                  <div class="border-t border-nude/30 pt-6 space-y-0">
+                    {category.services.map((service, i) => (
+                      <div class={`flex items-start justify-between py-4 ${i < category.services.length - 1 ? 'border-b border-nude/20' : ''}`}>
+                        <div class="flex-1 pr-4">
+                          <h3 class="font-medium text-sm mb-0.5">{service.name}</h3>
+                          <p class="text-xs text-rich-black/50">{service.desc}</p>
+                        </div>
+                        <span class="text-sm font-serif text-gold whitespace-nowrap">{service.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation CTA -->
+  <section class="py-20 bg-blush">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="font-serif text-4xl font-light tracking-wide mb-4">Let Us Guide You</h2>
+      <p class="text-rich-black/60 mb-8 leading-relaxed">
+        Every visit begins with a complimentary consultation. Tell us your goals, and we'll recommend the perfect services for you.
+      </p>
+      <a href="/book" class="inline-flex items-center px-8 py-4 bg-rich-black text-warm-white text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:shadow-[0_0_24px_rgba(212,168,83,0.4)] transition-all duration-300">
+        Book a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Products We Love -->
+  <section class="py-24 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">In the Studio</span>
+          <span class="w-8 h-px bg-gold"></span>
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide mb-4">Products We Love</h2>
+        <p class="text-rich-black/60">We use and stock only professional-grade products from trusted brands.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <div class="group bg-white/60 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-nude/20">
+            <div class="overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.alt}
+                class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl mb-1">{product.name}</h3>
+              <p class="text-sm text-rich-black/50">{product.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  document.querySelectorAll('.service-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = (btn as HTMLElement).dataset.target;
+      const content = document.getElementById(targetId!);
+      const chevron = btn.querySelector('.service-chevron');
+      const isOpen = content?.classList.contains('open');
+
+      // Close all others
+      document.querySelectorAll('.service-content').forEach((el) => el.classList.remove('open'));
+      document.querySelectorAll('.service-chevron').forEach((el) => el.classList.remove('rotate-180'));
+      document.querySelectorAll('.service-toggle').forEach((el) => el.setAttribute('aria-expanded', 'false'));
+
+      if (!isOpen) {
+        content?.classList.add('open');
+        chevron?.classList.add('rotate-180');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

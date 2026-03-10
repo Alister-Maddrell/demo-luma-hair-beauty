@@ -1,0 +1,310 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  { name: 'Hair', tagline: 'Colour, cuts, and styling by Sydney\'s most talented artists', image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop', alt: 'Stylist cutting and styling hair in a modern salon' },
+  { name: 'Skin', tagline: 'Facials, peels, and treatments for luminous, healthy skin', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop', alt: 'Woman receiving a professional facial treatment' },
+  { name: 'Nails', tagline: 'Manicures, pedicures, and nail art in a relaxing setting', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&h=600&fit=crop', alt: 'Professional manicure with elegant nail polish application' },
+  { name: 'Lashes & Brows', tagline: 'Extensions, lifts, tints, and shaping for effortless definition', image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=800&h=600&fit=crop', alt: 'Close-up of beautiful lash extensions on a client' },
+];
+
+const team = [
+  { name: 'Isabella Ferraro', role: 'Creative Director & Senior Stylist', years: 12, specialty: 'Specialises in lived-in colour and editorial styling', image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=750&fit=crop', alt: 'Isabella Ferraro, Creative Director and Senior Stylist at LUMA' },
+  { name: 'Aiden Park', role: 'Senior Colourist', years: 8, specialty: 'Balayage and colour correction specialist', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=750&fit=crop', alt: 'Aiden Park, Senior Colourist at LUMA' },
+  { name: 'Chloe Bennett', role: 'Stylist & Extensions Specialist', years: 6, specialty: 'Tape, micro-link, and hand-tied extensions', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=750&fit=crop', alt: 'Chloe Bennett, Stylist and Extensions Specialist at LUMA' },
+  { name: 'Maya Singh', role: 'Skin Therapist', years: 7, specialty: 'Advanced facials, chemical peels, and LED therapy', image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=750&fit=crop', alt: 'Maya Singh, Skin Therapist at LUMA' },
+  { name: 'Liam Torres', role: 'Barber & Stylist', years: 5, specialty: 'Modern cuts, fades, and men\'s grooming', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop', alt: 'Liam Torres, Barber and Stylist at LUMA' },
+];
+
+const beforeAfter = [
+  { before: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&h=800&fit=crop', caption: 'Full balayage & toner — from box-dye brunette to dimensional caramel', beforeAlt: 'Before: brunette hair with flat, box-dye colour', afterAlt: 'After: dimensional caramel balayage with warm tones' },
+  { before: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&h=800&fit=crop', caption: 'Colour correction — brassiness removed, restored to icy platinum', beforeAlt: 'Before: brassy, yellowish blonde hair', afterAlt: 'After: icy platinum blonde with cool tones' },
+  { before: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop', caption: 'Dramatic chop — waist-length to a textured lob with curtain bangs', beforeAlt: 'Before: long, waist-length hair', afterAlt: 'After: textured lob with curtain bangs' },
+];
+
+const reviews = [
+  { stars: 5, quote: 'Isabella completely understood what I wanted. I\'ve never felt more confident walking out of a salon.', name: 'Jess', service: 'Balayage & Cut' },
+  { stars: 5, quote: 'The skin facial was incredible. My skin has never looked this good. Already booked my next one.', name: 'Anna', service: 'Signature Facial' },
+  { stars: 5, quote: 'I\'m so fussy about my hair colour and Aiden absolutely nailed it. Exactly what I asked for.', name: 'Megan', service: 'Full Colour' },
+  { stars: 5, quote: 'The vibe, the coffee, the result — everything about LUMA is premium without being pretentious.', name: 'Lily', service: 'Cut & Style' },
+];
+
+const instagramImages = [
+  { src: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&h=600&fit=crop', alt: 'Gorgeous wavy hair styling result at LUMA salon' },
+  { src: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=600&h=600&fit=crop', alt: 'Warm and inviting LUMA salon interior' },
+  { src: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=600&fit=crop', alt: 'Artisan latte art served at LUMA salon' },
+  { src: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&h=600&fit=crop', alt: 'Professional hair styling tools laid out on marble' },
+  { src: 'https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=600&h=600&fit=crop', alt: 'Behind the scenes at LUMA salon' },
+  { src: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=600&fit=crop', alt: 'Beautiful blonde hair colour result at LUMA' },
+];
+---
+
+<Layout title="LUMA Hair & Beauty — Where Style Meets Sydney">
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center bg-warm-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div class="order-2 lg:order-1 pb-12 lg:pb-0">
+          <div class="inline-flex items-center gap-2 mb-6">
+            <span class="w-8 h-px bg-gold"></span>
+            <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Est. 2017 · Sydney CBD</span>
+          </div>
+          <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.1] tracking-wide mb-6">
+            Where Style<br />Meets <span class="italic text-rose">Sydney</span>
+          </h1>
+          <p class="text-lg text-rich-black/60 max-w-lg mb-10 leading-relaxed">
+            Award-winning hair, skin, and beauty services in the heart of the CBD. Because you deserve to feel extraordinary.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/book" class="inline-flex items-center px-8 py-4 bg-rich-black text-warm-white text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:shadow-[0_0_24px_rgba(212,168,83,0.4)] transition-all duration-300">
+              Book Now
+            </a>
+            <a href="/services" class="inline-flex items-center px-8 py-4 border-2 border-gold text-rich-black text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-gold hover:text-white transition-all duration-300">
+              View Services
+            </a>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&h=900&fit=crop"
+              alt="Luxurious LUMA salon interior with warm lighting and modern styling stations"
+              class="w-full h-[400px] lg:h-[600px] object-cover"
+              loading="eager"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-rich-black/20 to-transparent"></div>
+          </div>
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-gold/30 rounded-3xl hidden lg:block"></div>
+          <div class="absolute -top-6 -right-6 w-24 h-24 border-2 border-gold/20 rounded-full hidden lg:block"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Categories -->
+  <section class="py-24 bg-blush">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">What We Do</span>
+          <span class="w-8 h-px bg-gold"></span>
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Our Expertise</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service) => (
+          <a href="/services" class="group relative rounded-3xl overflow-hidden aspect-[3/4] cursor-pointer">
+            <img
+              src={service.image}
+              alt={service.alt}
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-rich-black/70 via-rich-black/20 to-transparent"></div>
+            <div class="absolute inset-0 border-2 border-transparent group-hover:border-gold rounded-3xl transition-colors duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="font-serif text-2xl text-white mb-2">{service.name}</h3>
+              <p class="text-sm text-white/70 leading-relaxed">{service.tagline}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Team -->
+  <section class="py-24 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <span class="inline-flex items-center gap-2 mb-4">
+            <span class="w-8 h-px bg-gold"></span>
+            <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">The People</span>
+          </span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Your Stylists</h2>
+        </div>
+        <div class="hidden sm:flex gap-2">
+          <button id="team-prev" class="w-10 h-10 rounded-full border border-nude hover:border-gold flex items-center justify-center transition-colors duration-300" aria-label="Scroll team carousel left">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="team-next" class="w-10 h-10 rounded-full border border-nude hover:border-gold flex items-center justify-center transition-colors duration-300" aria-label="Scroll team carousel right">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="team-carousel" class="team-carousel flex gap-6 overflow-x-auto scroll-smooth pb-4">
+        {team.map((member) => (
+          <div class="flex-shrink-0 w-72 group">
+            <div class="relative rounded-3xl overflow-hidden mb-4 shadow-lg">
+              <img
+                src={member.image}
+                alt={member.alt}
+                class="w-72 h-96 object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-rich-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            <h3 class="font-serif text-xl mb-1">{member.name}</h3>
+            <p class="text-sm text-gold font-medium mb-1">{member.role}</p>
+            <p class="text-xs text-rich-black/50">{member.years} years · {member.specialty}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section class="py-24 bg-blush">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Real Results</span>
+          <span class="w-8 h-px bg-gold"></span>
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Transformations</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {beforeAfter.map((item, i) => (
+          <div>
+            <div class="ba-slider relative rounded-3xl overflow-hidden aspect-[3/4] shadow-lg" data-slider={i}>
+              <img src={item.after} alt={item.afterAlt} class="ba-after w-full h-full object-cover" loading="lazy" />
+              <div class="ba-before" style="width: 50%;">
+                <img src={item.before} alt={item.beforeAlt} style={`width: ${100}%; min-width: 100%;`} loading="lazy" />
+              </div>
+              <div class="ba-handle" style="left: 50%;"></div>
+              <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">Before</div>
+              <div class="absolute top-4 right-4 bg-rich-black/80 text-warm-white text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">After</div>
+            </div>
+            <p class="mt-4 text-sm text-center text-rich-black/60 italic">{item.caption}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="py-24 bg-warm-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Testimonials</span>
+          <span class="w-8 h-px bg-gold"></span>
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Kind Words</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {reviews.map((review) => (
+          <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-nude/30">
+            <div class="flex gap-1 mb-4">
+              {Array.from({ length: review.stars }).map(() => (
+                <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+            <p class="text-sm leading-relaxed text-rich-black/70 mb-6 italic">"{review.quote}"</p>
+            <div>
+              <p class="font-serif text-lg">— {review.name}</p>
+              <p class="text-xs text-gold tracking-wider uppercase">{review.service}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-20 bg-blush">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="font-serif text-4xl font-light tracking-wide mb-4">Join the LUMA List</h2>
+      <p class="text-rich-black/60 mb-8">Get 15% off your first visit plus early access to seasonal offers and new service launches.</p>
+      <form id="newsletter-form" action="https://formspree.io/f/placeholder" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" name="email" placeholder="Your email address" required class="flex-1 px-6 py-3.5 bg-white border border-nude rounded-full text-sm focus:outline-none focus:border-gold transition-colors duration-300" />
+        <button type="submit" class="px-8 py-3.5 bg-gold text-white text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-gold/90 transition-colors duration-300">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Instagram -->
+  <section class="py-24 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-4xl font-light tracking-wide mb-2">Follow <span class="text-rose italic">@lumahairbeauty</span></h2>
+        <p class="text-sm text-rich-black/50">Daily inspiration from the studio</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        {instagramImages.map((img) => (
+          <a href="#" class="group relative rounded-2xl overflow-hidden aspect-square">
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-rich-black/0 group-hover:bg-rich-black/30 transition-colors duration-300 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  // Team carousel
+  const carousel = document.getElementById('team-carousel');
+  const prevBtn = document.getElementById('team-prev');
+  const nextBtn = document.getElementById('team-next');
+
+  prevBtn?.addEventListener('click', () => {
+    carousel?.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  nextBtn?.addEventListener('click', () => {
+    carousel?.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  // Before/After sliders
+  document.querySelectorAll('.ba-slider').forEach((slider) => {
+    const beforeEl = slider.querySelector('.ba-before') as HTMLElement;
+    const handle = slider.querySelector('.ba-handle') as HTMLElement;
+    if (!beforeEl || !handle) return;
+
+    let isDragging = false;
+
+    function updatePosition(x: number) {
+      const rect = (slider as HTMLElement).getBoundingClientRect();
+      let percent = ((x - rect.left) / rect.width) * 100;
+      percent = Math.max(0, Math.min(100, percent));
+      beforeEl.style.width = percent + '%';
+      handle.style.left = percent + '%';
+    }
+
+    slider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updatePosition((e as MouseEvent).clientX);
+    });
+
+    slider.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      updatePosition((e as TouchEvent).touches[0].clientX);
+    }, { passive: true });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updatePosition(e.clientX);
+    });
+
+    document.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      updatePosition(e.touches[0].clientX);
+    });
+
+    document.addEventListener('mouseup', () => { isDragging = false; });
+    document.addEventListener('touchend', () => { isDragging = false; });
+  });
+</script>
