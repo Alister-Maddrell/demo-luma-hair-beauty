@@ -158,7 +158,7 @@ const instagramImages = [
       </div>
       <div id="team-carousel" class="team-carousel flex gap-6 overflow-x-auto scroll-smooth pb-4">
         {team.map((member) => (
-          <div class="flex-shrink-0 w-72 group relative" style="border-left: 3px solid transparent; transition: border-color 0.3s;" onmouseenter="this.style.borderColor='#D4A853'" onmouseleave="this.style.borderColor='transparent'">
+          <div class="flex-shrink-0 w-72 group">
             <div class="relative rounded-3xl overflow-hidden mb-4 shadow-lg">
               <img
                 src={member.image}
