@@ -18,10 +18,14 @@ html {
 
 body {
   font-family: var(--font-sans);
+  font-size: clamp(0.9375rem, 0.15vw + 0.9rem, 1rem);
+  line-height: 1.7;
+  letter-spacing: 0.005em;
   color: var(--color-rich-black);
   background-color: var(--color-warm-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
@@ -156,4 +160,49 @@ body {
 .team-carousel {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ── Scroll Reveal — slowest, most graceful (600-700ms) ──── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Graceful stagger — like a curtain opening */
+.stagger-1 { transition-delay: 0ms; }
+.stagger-2 { transition-delay: 120ms; }
+.stagger-3 { transition-delay: 240ms; }
+.stagger-4 { transition-delay: 360ms; }
+.stagger-5 { transition-delay: 480ms; }
+
+/* ── Elegant hover states — smooth and slow (400ms) ───────── */
+
+.card-elegant {
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.card-elegant:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.08);
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .booking-step { opacity: 1; transform: none; }
 }
