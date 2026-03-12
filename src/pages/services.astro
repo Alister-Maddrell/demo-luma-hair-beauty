@@ -127,12 +127,13 @@ const products = [
                 <div class="px-8 pb-8">
                   <div class="border-t border-nude/30 pt-6 space-y-0">
                     {category.services.map((service, i) => (
-                      <div class={`flex items-start justify-between py-4 ${i < category.services.length - 1 ? 'border-b border-nude/20' : ''}`}>
-                        <div class="flex-1 pr-4">
-                          <h3 class="font-medium text-sm mb-0.5">{service.name}</h3>
-                          <p class="text-xs text-rich-black/50">{service.desc}</p>
+                      <div class={`py-4 ${i < category.services.length - 1 ? 'border-b border-nude/20' : ''}`}>
+                        <div class="flex items-baseline">
+                          <h3 class="font-medium text-sm">{service.name}</h3>
+                          <div class="price-dots"></div>
+                          <span class="text-sm font-serif text-gold whitespace-nowrap">{service.price}</span>
                         </div>
-                        <span class="text-sm font-serif text-gold whitespace-nowrap">{service.price}</span>
+                        <p class="text-xs text-rich-black/50 mt-0.5">{service.desc}</p>
                       </div>
                     ))}
                   </div>

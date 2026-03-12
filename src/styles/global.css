@@ -143,6 +143,8 @@ body {
   transition: opacity 0.4s ease, transform 0.4s ease;
   pointer-events: none;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 
@@ -193,6 +195,68 @@ body {
 .card-elegant:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(26, 26, 26, 0.08);
+}
+
+/* Rose grain texture */
+.rose-grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.02;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23C4828A'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Gold decorative elements */
+.gold-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.gold-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+}
+
+.gold-line-h {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* Service pricing dot leader */
+.price-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--color-nude);
+  margin: 0 12px;
+  position: relative;
+  bottom: 4px;
+}
+
+/* Booking progress gold fill animation */
+.booking-dot.active-gold {
+  background: var(--color-gold) !important;
+  color: white !important;
+  box-shadow: 0 0 16px rgba(212, 168, 83, 0.3);
+}
+
+/* Selected card gold glow */
+.card-selected {
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.15), 0 4px 16px rgba(212, 168, 83, 0.1) !important;
+}
+
+/* Service category expanded state */
+.service-content.open {
+  border-left: 2px solid var(--color-gold);
+  padding-left: 16px;
 }
 
 /* ── Reduced Motion ────────────────────────────────────────── */
