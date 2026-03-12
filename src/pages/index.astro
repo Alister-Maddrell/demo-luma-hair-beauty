@@ -2,44 +2,44 @@
 import Layout from '../layouts/Layout.astro';
 
 const services = [
-  { name: 'Hair', tagline: 'Colour, cuts, and styling by Sydney\'s most talented artists', image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop', alt: 'Stylist cutting and styling hair in a modern salon' },
-  { name: 'Skin', tagline: 'Facials, peels, and treatments for luminous, healthy skin', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop', alt: 'Woman receiving a professional facial treatment' },
-  { name: 'Nails', tagline: 'Manicures, pedicures, and nail art in a relaxing setting', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&h=600&fit=crop', alt: 'Professional manicure with elegant nail polish application' },
-  { name: 'Lashes & Brows', tagline: 'Extensions, lifts, tints, and shaping for effortless definition', image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=800&h=600&fit=crop', alt: 'Close-up of beautiful lash extensions on a client' },
+  { name: 'Hair', tagline: 'Leave the chair with colour that turns heads and a cut that feels unmistakably you — crafted by Sydney CBD\'s most in-demand artists', image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop', alt: 'Expert hair cutting and styling at LUMA salon on York Street Sydney CBD' },
+  { name: 'Skin', tagline: 'Reveal your healthiest, most radiant complexion with clinical-grade facials, peels, and LED therapy tailored to your skin', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop', alt: 'Professional facial treatment at LUMA beauty salon Sydney' },
+  { name: 'Nails', tagline: 'Treat yourself to a flawless gel manicure or luxurious pedicure — your moment of calm in the heart of the city', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&h=600&fit=crop', alt: 'Professional gel manicure and nail art at LUMA Sydney CBD salon' },
+  { name: 'Lashes & Brows', tagline: 'Wake up every morning looking effortlessly polished with lash extensions, lifts, and precision brow shaping', image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=800&h=600&fit=crop', alt: 'Beautiful lash extensions and brow shaping at LUMA Hair and Beauty Sydney' },
 ];
 
 const team = [
-  { name: 'Isabella Ferraro', role: 'Creative Director & Senior Stylist', years: 12, specialty: 'Specialises in lived-in colour and editorial styling', image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=750&fit=crop', alt: 'Isabella Ferraro, Creative Director and Senior Stylist at LUMA' },
-  { name: 'Aiden Park', role: 'Senior Colourist', years: 8, specialty: 'Balayage and colour correction specialist', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=750&fit=crop', alt: 'Aiden Park, Senior Colourist at LUMA' },
-  { name: 'Chloe Bennett', role: 'Stylist & Extensions Specialist', years: 6, specialty: 'Tape, micro-link, and hand-tied extensions', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=750&fit=crop', alt: 'Chloe Bennett, Stylist and Extensions Specialist at LUMA' },
-  { name: 'Maya Singh', role: 'Skin Therapist', years: 7, specialty: 'Advanced facials, chemical peels, and LED therapy', image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=750&fit=crop', alt: 'Maya Singh, Skin Therapist at LUMA' },
-  { name: 'Liam Torres', role: 'Barber & Stylist', years: 5, specialty: 'Modern cuts, fades, and men\'s grooming', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop', alt: 'Liam Torres, Barber and Stylist at LUMA' },
+  { name: 'Isabella Ferraro', role: 'Creative Director & Senior Stylist', years: 12, specialty: 'Known for lived-in balayage and editorial looks that turn heads on York Street and beyond', image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=750&fit=crop', alt: 'Isabella Ferraro, Creative Director and Senior Stylist at LUMA Hair and Beauty Sydney CBD' },
+  { name: 'Aiden Park', role: 'Senior Colourist', years: 8, specialty: 'Sydney\'s go-to for flawless balayage and complex colour corrections — his blends are iconic', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=750&fit=crop', alt: 'Aiden Park, Senior Colourist at LUMA salon Sydney' },
+  { name: 'Chloe Bennett', role: 'Stylist & Extensions Specialist', years: 6, specialty: 'Creates seamless, undetectable extensions using tape, micro-link, and hand-tied methods', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=750&fit=crop', alt: 'Chloe Bennett, hair extensions specialist at LUMA Hair and Beauty Sydney' },
+  { name: 'Maya Singh', role: 'Skin Therapist', years: 7, specialty: 'Signature facials, clinical peels, and LED therapy — clients call her "the glow whisperer"', image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=750&fit=crop', alt: 'Maya Singh, Skin Therapist at LUMA beauty salon Sydney CBD' },
+  { name: 'Liam Torres', role: 'Barber & Stylist', years: 5, specialty: 'Sharp fades, textured crops, and modern men\'s grooming — the city\'s best-kept secret', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop', alt: 'Liam Torres, Barber and men\'s stylist at LUMA salon Sydney CBD' },
 ];
 
 const beforeAfter = [
-  { before: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&h=800&fit=crop', caption: 'Full balayage & toner — from box-dye brunette to dimensional caramel', beforeAlt: 'Before: brunette hair with flat, box-dye colour', afterAlt: 'After: dimensional caramel balayage with warm tones' },
-  { before: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&h=800&fit=crop', caption: 'Colour correction — brassiness removed, restored to icy platinum', beforeAlt: 'Before: brassy, yellowish blonde hair', afterAlt: 'After: icy platinum blonde with cool tones' },
-  { before: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop', caption: 'Dramatic chop — waist-length to a textured lob with curtain bangs', beforeAlt: 'Before: long, waist-length hair', afterAlt: 'After: textured lob with curtain bangs' },
+  { before: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&h=800&fit=crop', caption: 'Balayage transformation by Aiden — flat box-dye lifted to sun-kissed, dimensional caramel in one session', beforeAlt: 'Before: flat brunette hair with visible box-dye colour at LUMA Sydney', afterAlt: 'After: dimensional caramel balayage with warm tones by LUMA colourists' },
+  { before: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&h=800&fit=crop', caption: 'Colour correction by Aiden — stubborn brassiness removed and restored to a luminous icy platinum', beforeAlt: 'Before: brassy yellowish blonde hair needing colour correction', afterAlt: 'After: flawless icy platinum blonde by LUMA colour correction specialist Sydney' },
+  { before: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&h=800&fit=crop', after: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop', caption: 'The big chop by Isabella — waist-length hair reimagined as a textured lob with soft curtain bangs', beforeAlt: 'Before: long waist-length hair before cut at LUMA salon', afterAlt: 'After: chic textured lob with curtain bangs cut by Isabella at LUMA Sydney' },
 ];
 
 const reviews = [
-  { stars: 5, quote: 'Isabella completely understood what I wanted. I\'ve never felt more confident walking out of a salon.', name: 'Jess', service: 'Balayage & Cut' },
-  { stars: 5, quote: 'The skin facial was incredible. My skin has never looked this good. Already booked my next one.', name: 'Anna', service: 'Signature Facial' },
-  { stars: 5, quote: 'I\'m so fussy about my hair colour and Aiden absolutely nailed it. Exactly what I asked for.', name: 'Megan', service: 'Full Colour' },
-  { stars: 5, quote: 'The vibe, the coffee, the result — everything about LUMA is premium without being pretentious.', name: 'Lily', service: 'Cut & Style' },
+  { stars: 5, quote: 'I walked into LUMA with a Pinterest board and zero hope. Isabella nailed the exact balayage I wanted — I genuinely gasped when she turned my chair around. Best salon in Sydney CBD, hands down.', name: 'Jess M.', service: 'Balayage & Cut' },
+  { stars: 5, quote: 'Maya\'s signature facial completely transformed my skin. My pores are smaller, my tone is even, and three people at work asked what I\'d changed. Already booked my next monthly session.', name: 'Anna K.', service: 'Signature Facial' },
+  { stars: 5, quote: 'I\'m incredibly particular about my colour — I\'ve been to six salons in Sydney. Aiden was the first colourist to match my reference photo perfectly. No brassiness, no compromise. I\'m a LUMA client for life.', name: 'Megan R.', service: 'Full Colour & Toner' },
+  { stars: 5, quote: 'The espresso, the warm towels, the fact they actually listen — LUMA feels like a five-star experience on York Street. Liam gave me the best cut I\'ve ever had, and I walked back to Wynyard feeling incredible.', name: 'Lily T.', service: 'Cut & Style' },
 ];
 
 const instagramImages = [
-  { src: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&h=600&fit=crop', alt: 'Gorgeous wavy hair styling result at LUMA salon' },
-  { src: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=600&h=600&fit=crop', alt: 'Warm and inviting LUMA salon interior' },
-  { src: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=600&fit=crop', alt: 'Artisan latte art served at LUMA salon' },
-  { src: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&h=600&fit=crop', alt: 'Professional hair styling tools laid out on marble' },
-  { src: 'https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=600&h=600&fit=crop', alt: 'Behind the scenes at LUMA salon' },
-  { src: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=600&fit=crop', alt: 'Beautiful blonde hair colour result at LUMA' },
+  { src: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&h=600&fit=crop', alt: 'Effortless beachy waves styled at LUMA Hair and Beauty salon Sydney CBD' },
+  { src: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=600&h=600&fit=crop', alt: 'LUMA salon interior on York Street Sydney with warm lighting and modern decor' },
+  { src: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=600&fit=crop', alt: 'Complimentary artisan coffee served to clients at LUMA Sydney CBD salon' },
+  { src: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&h=600&fit=crop', alt: 'Premium styling tools and products used at LUMA Hair and Beauty Sydney' },
+  { src: 'https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=600&h=600&fit=crop', alt: 'Behind the scenes with LUMA stylists at our Sydney CBD hair salon' },
+  { src: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=600&fit=crop', alt: 'Stunning platinum blonde colour result by LUMA colourists in Sydney' },
 ];
 ---
 
-<Layout title="LUMA Hair & Beauty — Where Style Meets Sydney">
+<Layout title="Sydney CBD Hair Salon | LUMA Hair & Beauty" description="Walk out feeling like the best version of yourself. Award-winning hair, skin & beauty in Sydney CBD. Book your appointment at LUMA today.">
 
   <!-- Hero Section -->
   <section class="relative min-h-[90vh] flex items-center bg-warm-white overflow-hidden">
@@ -54,17 +54,17 @@ const instagramImages = [
             <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Est. 2017 · Sydney CBD</span>
           </div>
           <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.1] tracking-wide mb-6">
-            Where Style<br />Meets <span class="italic text-rose">Sydney</span>
+            Walk Out Feeling<br /><span class="italic text-rose">Incredible</span>
           </h1>
           <p class="text-lg text-rich-black/60 max-w-lg mb-10 leading-relaxed">
-            Award-winning hair, skin, and beauty services in the heart of the CBD. Because you deserve to feel extraordinary.
+            Award-winning hair, skin, and beauty in Sydney CBD. You deserve to look in the mirror and love what you see — we make that happen.
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="/book" class="inline-flex items-center px-8 py-4 bg-rich-black text-warm-white text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:shadow-[0_0_24px_rgba(212,168,83,0.4)] transition-all duration-300">
-              Book Now
+              Book Your Appointment
             </a>
             <a href="/services" class="inline-flex items-center px-8 py-4 border-2 border-gold text-rich-black text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-gold hover:text-white transition-all duration-300">
-              View Services
+              Find Your Look
             </a>
           </div>
           <div class="mt-12 flex justify-start">
@@ -105,7 +105,7 @@ const instagramImages = [
           <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">What We Do</span>
           <span class="w-8 h-px bg-gold"></span>
         </span>
-        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Our Expertise</h2>
+        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Your Beauty, Our Expertise</h2>
         <div class="w-12 h-0.5 bg-gold/40 mx-auto mt-4"></div>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -145,7 +145,7 @@ const instagramImages = [
             <span class="w-8 h-px bg-gold"></span>
             <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">The People</span>
           </span>
-          <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Your Stylists</h2>
+          <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Meet Your Stylists</h2>
         </div>
         <div class="hidden sm:flex gap-2">
           <button id="team-prev" class="w-10 h-10 rounded-full border border-nude hover:border-gold flex items-center justify-center transition-colors duration-300" aria-label="Scroll team carousel left">
@@ -186,7 +186,7 @@ const instagramImages = [
           <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Real Results</span>
           <span class="w-8 h-px bg-gold"></span>
         </span>
-        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Transformations</h2>
+        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Your Transformation Awaits</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         {beforeAfter.map((item, i) => (
@@ -223,7 +223,7 @@ const instagramImages = [
           <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Testimonials</span>
           <span class="w-8 h-px bg-gold"></span>
         </span>
-        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Kind Words</h2>
+        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">What Our Clients Say</h2>
       </div>
       <div class="flex justify-center mb-8"><span class="badge-frosted text-rich-black/60">200+ Five-Star Reviews</span></div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -256,7 +256,7 @@ const instagramImages = [
     <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center reveal corner-brackets relative">
       <div class="badge-frosted text-gold mb-4 inline-block">15% OFF</div>
       <h2 class="font-serif text-4xl font-light tracking-wide mb-4">Join the LUMA List</h2>
-      <p class="text-rich-black/60 mb-8">Get 15% off your first visit plus early access to seasonal offers and new service launches.</p>
+      <p class="text-rich-black/60 mb-8">Treat yourself to 15% off your first visit, plus be the first to hear about seasonal offers and new treatments.</p>
       <form id="newsletter-form" action="https://formspree.io/f/placeholder" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
         <input type="email" name="email" placeholder="Your email address" required class="flex-1 px-6 py-3.5 bg-white border border-nude rounded-full text-sm focus:outline-none focus:border-gold transition-colors duration-300" />
         <button type="submit" class="px-8 py-3.5 bg-gold text-white text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-gold/90 transition-colors duration-300">Subscribe</button>
@@ -274,7 +274,7 @@ const instagramImages = [
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-12 reveal">
         <h2 class="font-serif text-4xl font-light tracking-wide mb-2">Follow <span class="text-rose italic">@lumahairbeauty</span></h2>
-        <p class="text-sm text-rich-black/50">Daily inspiration from the studio</p>
+        <p class="text-sm text-rich-black/50">Your daily dose of hair and beauty inspiration from our Sydney CBD studio</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
         {instagramImages.map((img) => (
