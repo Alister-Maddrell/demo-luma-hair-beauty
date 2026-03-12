@@ -268,6 +268,24 @@ const instagramImages = [
     carousel?.scrollBy({ left: 300, behavior: 'smooth' });
   });
 
+  // Touch swipe for team carousel
+  if (carousel) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    carousel.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    carousel.addEventListener('touchmove', (e: TouchEvent) => {
+      touchEndX = e.touches[0].clientX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', () => {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        carousel.scrollBy({ left: diff > 0 ? 300 : -300, behavior: 'smooth' });
+      }
+    });
+  }
+
   // Before/After sliders
   document.querySelectorAll('.ba-slider').forEach((slider) => {
     const beforeEl = slider.querySelector('.ba-before') as HTMLElement;
