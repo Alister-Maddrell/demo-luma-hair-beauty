@@ -130,6 +130,8 @@ body {
 
 .service-content.open {
   grid-template-rows: 1fr;
+  border-left: 2px solid var(--color-gold);
+  padding-left: 16px;
 }
 
 .service-content > div {
@@ -253,11 +255,6 @@ body {
   box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.15), 0 4px 16px rgba(212, 168, 83, 0.1) !important;
 }
 
-/* Service category expanded state */
-.service-content.open {
-  border-left: 2px solid var(--color-gold);
-  padding-left: 16px;
-}
 
 /* ── Reduced Motion ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

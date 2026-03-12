@@ -51,16 +51,16 @@ const instagramImages = [
   </section>
 
   <!-- Booking Flow -->
-  <section class="pb-24 bg-warm-white overflow-hidden">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 overflow-hidden">
+  <section class="pb-24 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
       <!-- Progress Bar -->
-      <div class="flex items-center justify-between mb-12 max-w-lg mx-auto">
+      <div class="flex items-center justify-between mb-12 max-w-xs sm:max-w-lg mx-auto">
         {[1, 2, 3, 4].map((step) => (
           <div class="flex items-center">
-            <div class={`booking-dot w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${step === 1 ? 'bg-gold text-white' : 'bg-nude/30 text-rich-black/40'}`} data-step={step}>
+            <div class={`booking-dot w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold transition-all duration-300 ${step === 1 ? 'bg-gold text-white' : 'bg-nude/30 text-rich-black/40'}`} data-step={step}>
               {step}
             </div>
-            {step < 4 && <div class={`booking-line w-16 sm:w-24 h-0.5 mx-2 transition-colors duration-300 ${step === 1 ? 'bg-gold' : 'bg-nude/30'}`} data-line={step}></div>}
+            {step < 4 && <div class={`booking-line w-8 sm:w-24 h-0.5 mx-1 sm:mx-2 transition-colors duration-300 ${step === 1 ? 'bg-gold' : 'bg-nude/30'}`} data-line={step}></div>}
           </div>
         ))}
       </div>
@@ -106,7 +106,7 @@ const instagramImages = [
             <!-- Week View -->
             <div class="flex flex-wrap gap-3 mb-8 justify-center">
               {weekDays.map((d, i) => (
-                <button class={`date-card flex flex-col items-center px-4 py-3 rounded-2xl border-2 transition-all duration-300 ${i === 0 ? 'border-gold bg-gold/10' : 'border-nude/30 bg-white/50 hover:border-gold'}`} data-date={d.date}>
+                <button class={`date-card flex flex-col items-center px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl border-2 transition-all duration-300 ${i === 0 ? 'border-gold bg-gold/10' : 'border-nude/30 bg-white/50 hover:border-gold'}`} data-date={d.date}>
                   <span class="text-xs text-rich-black/40 uppercase">{d.day}</span>
                   <span class="text-xl font-serif">{d.date}</span>
                   <span class="text-xs text-rich-black/40">{d.month}</span>
@@ -114,9 +114,9 @@ const instagramImages = [
               ))}
             </div>
             <!-- Time Slots -->
-            <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-1.5 sm:gap-2">
               {timeSlots.map((time, i) => (
-                <button class={`time-card px-3 py-2.5 rounded-xl border text-sm transition-all duration-300 ${i === 4 ? 'border-gold bg-gold/10 text-rich-black' : 'border-nude/30 bg-white/50 hover:border-gold text-rich-black/70'}`} data-time={time}>
+                <button class={`time-card px-2 sm:px-3 py-2.5 rounded-xl border text-xs sm:text-sm transition-all duration-300 ${i === 4 ? 'border-gold bg-gold/10 text-rich-black' : 'border-nude/30 bg-white/50 hover:border-gold text-rich-black/70'}`} data-time={time}>
                   {time}
                 </button>
               ))}
