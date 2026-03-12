@@ -51,8 +51,8 @@ const instagramImages = [
   </section>
 
   <!-- Booking Flow -->
-  <section class="pb-24 bg-warm-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+  <section class="pb-24 bg-warm-white overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 overflow-hidden">
       <!-- Progress Bar -->
       <div class="flex items-center justify-between mb-12 max-w-lg mx-auto">
         {[1, 2, 3, 4].map((step) => (
@@ -104,7 +104,7 @@ const instagramImages = [
           <p class="text-sm text-center text-rich-black/50 mb-8">Find a time that works for you</p>
           <div class="max-w-2xl mx-auto">
             <!-- Week View -->
-            <div class="flex gap-3 mb-8 justify-center">
+            <div class="flex flex-wrap gap-3 mb-8 justify-center">
               {weekDays.map((d, i) => (
                 <button class={`date-card flex flex-col items-center px-4 py-3 rounded-2xl border-2 transition-all duration-300 ${i === 0 ? 'border-gold bg-gold/10' : 'border-nude/30 bg-white/50 hover:border-gold'}`} data-date={d.date}>
                   <span class="text-xs text-rich-black/40 uppercase">{d.day}</span>
