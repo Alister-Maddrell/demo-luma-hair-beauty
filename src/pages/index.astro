@@ -43,9 +43,12 @@ const instagramImages = [
 
   <!-- Hero Section -->
   <section class="relative min-h-[90vh] flex items-center bg-warm-white overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern"></div>
+    <span class="watermark -top-8 -left-4">LUMA</span>
     <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
         <div class="order-2 lg:order-1 pb-12 lg:pb-0">
+          <div class="badge-frosted text-gold mb-4">Award-Winning Salon</div>
           <div class="inline-flex items-center gap-2 mb-6">
             <span class="w-8 h-px bg-gold"></span>
             <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Est. 2017 · Sydney CBD</span>
@@ -64,8 +67,13 @@ const instagramImages = [
               View Services
             </a>
           </div>
+          <div class="mt-12 flex justify-start">
+            <div class="scroll-indicator">
+              <svg class="w-5 h-5 text-gold animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </div>
+          </div>
         </div>
-        <div class="order-1 lg:order-2 relative">
+        <div class="order-1 lg:order-2 relative corner-brackets">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&h=900&fit=crop"
@@ -83,15 +91,14 @@ const instagramImages = [
   </section>
 
   <!-- Section transition -->
-  <div class="flex items-center justify-center gap-3 py-4">
-    <div class="w-12 h-px bg-gradient-to-r from-transparent to-gold/30"></div>
-    <div class="gold-diamond"></div>
-    <div class="w-12 h-px bg-gradient-to-l from-transparent to-gold/30"></div>
+  <div class="divider-diamond">
+    <div class="divider-text"><span class="text-[10px] tracking-[0.3em] uppercase text-gold/40">·</span></div>
   </div>
 
   <!-- Service Categories -->
-  <section class="py-28 lg:py-36 bg-blush">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="py-28 lg:py-36 bg-blush bg-grid-pattern relative overflow-hidden">
+    <span class="watermark top-4 right-0">Beauty</span>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
         <span class="inline-flex items-center gap-2 mb-4">
           <span class="w-8 h-px bg-gold"></span>
@@ -99,6 +106,7 @@ const instagramImages = [
           <span class="w-8 h-px bg-gold"></span>
         </span>
         <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Our Expertise</h2>
+        <div class="w-12 h-0.5 bg-gold/40 mx-auto mt-4"></div>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, i) => (
@@ -111,6 +119,7 @@ const instagramImages = [
             />
             <div class="absolute inset-0 bg-gradient-to-t from-rich-black/70 via-rich-black/20 to-transparent"></div>
             <div class="absolute inset-0 border-2 border-transparent group-hover:border-gold rounded-3xl transition-colors duration-500"></div>
+            <span class="absolute top-4 right-6 font-serif text-6xl text-white/10 font-light">0{i + 1}</span>
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <h3 class="font-serif text-2xl text-white mb-2">{service.name}</h3>
               <p class="text-sm text-white/70 leading-relaxed">{service.tagline}</p>
@@ -121,9 +130,15 @@ const instagramImages = [
     </div>
   </section>
 
+  <!-- Section transition -->
+  <div class="divider-diamond">
+    <div class="divider-text"><span class="text-[10px] tracking-[0.3em] uppercase text-gold/40">·</span></div>
+  </div>
+
   <!-- Meet the Team -->
-  <section class="py-28 lg:py-36 bg-warm-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="py-28 lg:py-36 bg-warm-white crosshatch relative overflow-hidden">
+    <span class="watermark top-4 left-0">Team</span>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-end justify-between mb-12">
         <div>
           <span class="inline-flex items-center gap-2 mb-4">
@@ -143,7 +158,7 @@ const instagramImages = [
       </div>
       <div id="team-carousel" class="team-carousel flex gap-6 overflow-x-auto scroll-smooth pb-4">
         {team.map((member) => (
-          <div class="flex-shrink-0 w-72 group">
+          <div class="flex-shrink-0 w-72 group relative" style="border-left: 3px solid transparent; transition: border-color 0.3s;" onmouseenter="this.style.borderColor='#D4A853'" onmouseleave="this.style.borderColor='transparent'">
             <div class="relative rounded-3xl overflow-hidden mb-4 shadow-lg">
               <img
                 src={member.image}
@@ -155,7 +170,7 @@ const instagramImages = [
             </div>
             <h3 class="font-serif text-xl mb-1">{member.name}</h3>
             <p class="text-sm text-gold font-medium mb-1">{member.role}</p>
-            <p class="text-xs text-rich-black/50">{member.years} years · {member.specialty}</p>
+            <p class="text-xs text-rich-black/50">{member.years} years <span class="inline-block w-1 h-1 rounded-full bg-gold mx-1 align-middle"></span> {member.specialty}</p>
           </div>
         ))}
       </div>
@@ -182,8 +197,9 @@ const instagramImages = [
                 <img src={item.before} alt={item.beforeAlt} style={`width: ${100}%; min-width: 100%;`} loading="lazy" />
               </div>
               <div class="ba-handle" style="left: 50%;"></div>
-              <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">Before</div>
-              <div class="absolute top-4 right-4 bg-rich-black/80 text-warm-white text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">After</div>
+              <div class="absolute top-4 left-1/2 -translate-x-1/2 z-20 badge-frosted text-gold">Slide to compare</div>
+              <div class="absolute top-12 left-4 bg-white/90 backdrop-blur-sm text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">Before</div>
+              <div class="absolute top-12 right-4 bg-rich-black/80 text-warm-white text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full">After</div>
             </div>
             <p class="mt-4 text-sm text-center text-rich-black/60 italic">{item.caption}</p>
           </div>
@@ -193,14 +209,12 @@ const instagramImages = [
   </section>
 
   <!-- Section transition -->
-  <div class="flex items-center justify-center gap-3 py-4">
-    <div class="w-12 h-px bg-gradient-to-r from-transparent to-gold/30"></div>
-    <div class="gold-diamond"></div>
-    <div class="w-12 h-px bg-gradient-to-l from-transparent to-gold/30"></div>
+  <div class="divider-diamond">
+    <div class="divider-text"><span class="text-[10px] tracking-[0.3em] uppercase text-gold/40">·</span></div>
   </div>
 
   <!-- Reviews -->
-  <section class="py-28 lg:py-36 bg-warm-white relative overflow-hidden">
+  <section class="py-28 lg:py-36 bg-warm-white relative overflow-hidden corner-brackets">
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
@@ -211,9 +225,11 @@ const instagramImages = [
         </span>
         <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide">Kind Words</h2>
       </div>
+      <div class="flex justify-center mb-8"><span class="badge-frosted text-rich-black/60">200+ Five-Star Reviews</span></div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {reviews.map((review, i) => (
-          <div class={`reveal stagger-${i + 1} bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-nude/30`}>
+          <div class={`reveal stagger-${i + 1} relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-nude/30`} style="border-left: 3px solid #D4A853;">
+            <span class="absolute -top-2 -left-1 font-serif text-5xl text-gold/10 leading-none">&ldquo;</span>
             <div class="flex gap-1 mb-4">
               {Array.from({ length: review.stars }).map(() => (
                 <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -230,9 +246,15 @@ const instagramImages = [
     </div>
   </section>
 
+  <!-- Section transition -->
+  <div class="divider-diamond">
+    <div class="divider-text"><span class="text-[10px] tracking-[0.3em] uppercase text-gold/40">·</span></div>
+  </div>
+
   <!-- Newsletter -->
-  <section class="py-24 lg:py-32 bg-blush">
-    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center reveal">
+  <section class="py-24 lg:py-32 bg-blush crosshatch relative overflow-hidden">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center reveal corner-brackets relative">
+      <div class="badge-frosted text-gold mb-4 inline-block">15% OFF</div>
       <h2 class="font-serif text-4xl font-light tracking-wide mb-4">Join the LUMA List</h2>
       <p class="text-rich-black/60 mb-8">Get 15% off your first visit plus early access to seasonal offers and new service launches.</p>
       <form id="newsletter-form" action="https://formspree.io/f/placeholder" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -241,6 +263,11 @@ const instagramImages = [
       </form>
     </div>
   </section>
+
+  <!-- Section transition -->
+  <div class="divider-diamond">
+    <div class="divider-text"><span class="text-[10px] tracking-[0.3em] uppercase text-gold/40">·</span></div>
+  </div>
 
   <!-- Instagram -->
   <section class="py-28 lg:py-36 bg-warm-white">

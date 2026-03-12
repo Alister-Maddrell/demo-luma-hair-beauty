@@ -89,14 +89,18 @@ const products = [
 <Layout title="Services & Pricing — LUMA Hair & Beauty">
 
   <!-- Page Header -->
-  <section class="pt-16 pb-12 bg-warm-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+  <section class="pt-16 pb-12 bg-warm-white relative overflow-hidden">
+    <div class="bg-grid-pattern"></div>
+    <span class="watermark -top-4 right-0">Menu</span>
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
+      <div class="badge-frosted text-gold mb-6">6 Categories · 40+ Services</div>
       <span class="inline-flex items-center gap-2 mb-6">
         <span class="w-8 h-px bg-gold"></span>
         <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Full Menu</span>
         <span class="w-8 h-px bg-gold"></span>
       </span>
       <h1 class="font-serif text-5xl sm:text-6xl font-light tracking-wide mb-6">Services & Pricing</h1>
+      <div class="w-16 h-0.5 bg-gold/40 mx-auto mt-4 mb-6"></div>
       <p class="text-rich-black/60 max-w-xl mx-auto leading-relaxed">
         Explore our full menu. All prices are starting from — your stylist will provide a personalised quote at your consultation.
       </p>
@@ -104,16 +108,18 @@ const products = [
   </section>
 
   <!-- Service Categories -->
-  <section class="pb-24 bg-warm-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+  <section class="pb-24 bg-warm-white relative overflow-hidden">
+    <div class="crosshatch"></div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 relative">
       <div class="space-y-4">
-        {serviceCategories.map((category) => (
+        {serviceCategories.map((category, i) => (
           <div class="service-category border border-nude/50 rounded-3xl overflow-hidden bg-white/50 backdrop-blur-sm">
             <button
               class="service-toggle w-full flex items-center justify-between px-8 py-6 text-left hover:bg-blush/50 transition-colors duration-300"
               data-target={category.id}
               aria-expanded="false"
             >
+              <span class="text-xs text-gold/30 font-serif mr-3 hidden sm:inline">0{i + 1}</span>
               <h2 class="font-serif text-2xl tracking-wide">{category.title}</h2>
               <div class="flex items-center gap-3">
                 <span class="text-xs text-rich-black/40 tracking-wider uppercase hidden sm:block">{category.services.length} services</span>
@@ -125,6 +131,7 @@ const products = [
             <div id={category.id} class="service-content">
               <div>
                 <div class="px-8 pb-8">
+                  <div class="w-12 h-px bg-gold/30 mb-4"></div>
                   <div class="border-t border-nude/30 pt-6 space-y-0">
                     {category.services.map((service, i) => (
                       <div class={`py-4 ${i < category.services.length - 1 ? 'border-b border-nude/20' : ''}`}>
@@ -147,8 +154,12 @@ const products = [
   </section>
 
   <!-- Consultation CTA -->
-  <section class="py-20 bg-blush">
-    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center">
+  <div class="divider-diamond"></div>
+  <section class="py-20 bg-blush relative overflow-hidden">
+    <div class="crosshatch"></div>
+    <span class="watermark -top-4 right-0">Book</span>
+    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center corner-brackets relative">
+      <div class="badge-frosted text-gold mb-4">Complimentary</div>
       <h2 class="font-serif text-4xl font-light tracking-wide mb-4">Let Us Guide You</h2>
       <p class="text-rich-black/60 mb-8 leading-relaxed">
         Every visit begins with a complimentary consultation. Tell us your goals, and we'll recommend the perfect services for you.
@@ -156,12 +167,16 @@ const products = [
       <a href="/book" class="inline-flex items-center px-8 py-4 bg-rich-black text-warm-white text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:shadow-[0_0_24px_rgba(212,168,83,0.4)] transition-all duration-300">
         Book a Consultation
       </a>
+      <p class="text-xs text-rich-black/40 mt-4">No obligation · Takes 15 minutes · In-salon or virtual</p>
     </div>
   </section>
+  <div class="divider-diamond"></div>
 
   <!-- Products We Love -->
-  <section class="py-24 bg-warm-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="py-24 bg-warm-white relative overflow-hidden">
+    <div class="bg-grid-pattern"></div>
+    <span class="watermark -top-4 right-0">Products</span>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
       <div class="text-center mb-16">
         <span class="inline-flex items-center gap-2 mb-4">
           <span class="w-8 h-px bg-gold"></span>
@@ -169,18 +184,20 @@ const products = [
           <span class="w-8 h-px bg-gold"></span>
         </span>
         <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide mb-4">Products We Love</h2>
+        <div class="w-16 h-0.5 bg-gold/40 mx-auto mt-4 mb-6"></div>
         <p class="text-rich-black/60">We use and stock only professional-grade products from trusted brands.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <div class="group bg-white/60 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-nude/20">
-            <div class="overflow-hidden">
+          <div class="group card-luxe gold-glow rounded-3xl overflow-hidden">
+            <div class="overflow-hidden relative">
               <img
                 src={product.image}
                 alt={product.alt}
                 class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
+              <div class="absolute top-3 right-3 badge-frosted text-gold text-[10px]">In Salon</div>
             </div>
             <div class="p-6">
               <h3 class="font-serif text-xl mb-1">{product.name}</h3>
