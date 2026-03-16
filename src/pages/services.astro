@@ -22,7 +22,7 @@ const serviceCategories = [
       { name: 'Root Touch-Up', desc: 'Seamless regrowth coverage so your colour always looks its best', price: 'from $110' },
       { name: 'Half Head Foils', desc: 'Subtle highlights that add dimension and a sun-kissed glow', price: 'from $180' },
       { name: 'Full Head Foils', desc: 'All-over highlights or lowlights for a complete, head-turning transformation', price: 'from $250' },
-      { name: 'Balayage / Ombré', desc: 'Hand-painted, lived-in colour that grows out beautifully and looks effortlessly natural', price: 'from $280' },
+      { name: 'Balayage / Ombre', desc: 'Hand-painted, lived-in colour that grows out beautifully and looks effortlessly natural', price: 'from $280' },
       { name: 'Colour Correction', desc: 'Let our expert colourists undo the damage and restore the shade you have been dreaming of', price: 'from $350' },
       { name: 'Toner / Gloss', desc: 'Revive your tone and add mirror-like shine between colour appointments', price: 'from $60' },
     ],
@@ -88,42 +88,42 @@ const products = [
 
 <Layout title="Hair & Beauty Services Sydney CBD | LUMA Pricing" description="Explore 40+ hair, skin, nail and beauty services at LUMA Sydney CBD. View our full menu with transparent pricing. Book your visit online today.">
 
-  <!-- Page Header -->
-  <section class="pt-16 pb-12 bg-warm-white relative overflow-hidden">
-    <div class="bg-grid-pattern"></div>
-    <span class="watermark -top-4 right-0">Menu</span>
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
-      <div class="badge-frosted text-gold mb-6">6 Categories · 40+ Services</div>
-      <span class="inline-flex items-center gap-2 mb-6">
-        <span class="w-8 h-px bg-gold"></span>
-        <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Full Menu</span>
-        <span class="w-8 h-px bg-gold"></span>
+  <!-- Page Header — Dramatic editorial hero -->
+  <section class="relative pt-32 pb-20 bg-ink overflow-hidden">
+    <span class="watermark -top-8 right-0 text-paper">Menu</span>
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 text-center relative">
+      <div class="inline-flex items-center gap-2 bg-hot-pink text-paper text-[9px] tracking-[0.3em] uppercase font-bold px-4 py-2 mb-8">6 Categories · 40+ Services</div>
+      <span class="flex items-center justify-center gap-3 mb-6">
+        <span class="w-10 h-[2px] bg-hot-pink"></span>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-hot-pink font-bold">Full Menu</span>
+        <span class="w-10 h-[2px] bg-hot-pink"></span>
       </span>
-      <h1 class="font-serif text-5xl sm:text-6xl font-light tracking-wide mb-6">Services & Pricing</h1>
-      <div class="w-16 h-0.5 bg-gold/40 mx-auto mt-4 mb-6"></div>
-      <p class="text-rich-black/60 max-w-xl mx-auto leading-relaxed">
+      <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-paper leading-[0.95] mb-8">Services<br />&amp; Pricing</h1>
+      <div class="w-16 h-[2px] bg-hot-pink mx-auto mb-8"></div>
+      <p class="text-paper/50 max-w-xl mx-auto leading-relaxed">
         Find the perfect treatment for you. All prices are starting from — your stylist will tailor a personalised quote during your complimentary consultation.
       </p>
     </div>
   </section>
 
-  <!-- Service Categories -->
-  <section class="pb-24 bg-warm-white relative overflow-hidden">
-    <div class="crosshatch"></div>
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 relative">
-      <div class="space-y-4">
+  <!-- Service Categories — High contrast accordion -->
+  <section class="py-20 lg:py-28 bg-paper relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10 relative">
+      <div class="space-y-3">
         {serviceCategories.map((category, i) => (
-          <div class="service-category border border-nude/50 rounded-3xl overflow-hidden bg-white/50 backdrop-blur-sm">
+          <div class="service-category border-2 border-ink/10 overflow-hidden bg-paper hover:border-ink/20 transition-colors duration-300">
             <button
               class="service-toggle w-full flex items-center justify-between px-8 py-6 text-left hover:bg-blush/50 transition-colors duration-300"
               data-target={category.id}
               aria-expanded="false"
             >
-              <span class="text-xs text-gold/30 font-serif mr-3 hidden sm:inline">0{i + 1}</span>
-              <h2 class="font-serif text-2xl tracking-wide">{category.title}</h2>
-              <div class="flex items-center gap-3">
-                <span class="text-xs text-rich-black/40 tracking-wider uppercase hidden sm:block">{category.services.length} services</span>
-                <svg class="service-chevron w-5 h-5 text-gold transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="flex items-center gap-4">
+                <span class="text-[10px] text-hot-pink font-bold tracking-wider hidden sm:inline">0{i + 1}</span>
+                <h2 class="font-display text-xl sm:text-2xl font-bold tracking-tight">{category.title}</h2>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-[10px] text-ink/30 tracking-[0.2em] uppercase font-semibold hidden sm:block">{category.services.length} services</span>
+                <svg class="service-chevron w-5 h-5 text-hot-pink transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
@@ -132,13 +132,13 @@ const products = [
               <div>
                 <div class="px-8 pb-8">
                   <div class="pt-4 space-y-0">
-                    {category.services.map((service, i) => (
-                      <div class="py-3">
+                    {category.services.map((service, j) => (
+                      <div class="py-3 border-b border-ink/5 last:border-0">
                         <div class="flex items-baseline justify-between">
-                          <h3 class="font-medium text-sm">{service.name}</h3>
-                          <span class="text-sm font-serif text-gold whitespace-nowrap ml-4">{service.price}</span>
+                          <h3 class="font-semibold text-sm">{service.name}</h3>
+                          <span class="text-sm font-display font-bold text-hot-pink whitespace-nowrap ml-4">{service.price}</span>
                         </div>
-                        <p class="text-xs text-rich-black/50 mt-0.5">{service.desc}</p>
+                        <p class="text-xs text-ink/40 mt-1">{service.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -151,55 +151,51 @@ const products = [
     </div>
   </section>
 
-  <!-- Consultation CTA -->
-  <div class="divider-diamond"></div>
-  <section class="py-20 bg-blush relative overflow-hidden">
-    <div class="crosshatch"></div>
-    <span class="watermark -top-4 right-0">Book</span>
-    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center corner-brackets relative">
-      <div class="badge-frosted text-gold mb-4">Complimentary</div>
-      <h2 class="font-serif text-4xl font-light tracking-wide mb-4">Not Sure Where to Start?</h2>
-      <p class="text-rich-black/60 mb-8 leading-relaxed">
+  <!-- Consultation CTA — Bold dark section -->
+  <section class="py-24 lg:py-32 bg-ink relative overflow-hidden">
+    <span class="watermark -top-4 right-0 text-paper">Book</span>
+    <div class="max-w-2xl mx-auto px-6 lg:px-10 text-center relative">
+      <div class="inline-flex items-center bg-hot-pink text-paper text-[9px] tracking-[0.3em] uppercase font-bold px-4 py-2 mb-6">Complimentary</div>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-paper mb-4">Not Sure Where<br />to Start?</h2>
+      <p class="text-paper/50 mb-10 leading-relaxed max-w-lg mx-auto">
         Every visit begins with a complimentary consultation. Share your goals with us, and we will create a personalised plan to help you look and feel your absolute best.
       </p>
-      <a href="/book" class="inline-flex items-center px-8 py-4 bg-rich-black text-warm-white text-xs tracking-[0.2em] uppercase font-semibold rounded-full hover:shadow-[0_0_24px_rgba(212,168,83,0.4)] transition-all duration-300">
+      <a href="/book" class="btn-primary">
         Book Your Free Consultation
       </a>
-      <p class="text-xs text-rich-black/40 mt-4">No obligation · Takes 15 minutes · In-salon or virtual</p>
+      <p class="text-[10px] text-paper/30 mt-6 tracking-wider uppercase">No obligation · Takes 15 minutes · In-salon or virtual</p>
     </div>
   </section>
-  <div class="divider-diamond"></div>
 
-  <!-- Products We Love -->
-  <section class="py-24 bg-warm-white relative overflow-hidden">
-    <div class="bg-grid-pattern"></div>
+  <!-- Products We Love — Light section with dark cards -->
+  <section class="py-24 lg:py-32 bg-blush relative overflow-hidden">
     <span class="watermark -top-4 right-0">Products</span>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 relative">
       <div class="text-center mb-16">
-        <span class="inline-flex items-center gap-2 mb-4">
-          <span class="w-8 h-px bg-gold"></span>
-          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">In the Studio</span>
-          <span class="w-8 h-px bg-gold"></span>
+        <span class="inline-flex items-center justify-center gap-3 mb-4">
+          <span class="w-10 h-[2px] bg-hot-pink"></span>
+          <span class="text-[10px] tracking-[0.4em] uppercase text-hot-pink font-bold">In the Studio</span>
+          <span class="w-10 h-[2px] bg-hot-pink"></span>
         </span>
-        <h2 class="font-serif text-4xl sm:text-5xl font-light tracking-wide mb-4">Products We Love</h2>
-        <div class="w-16 h-0.5 bg-gold/40 mx-auto mt-4 mb-6"></div>
-        <p class="text-rich-black/60">Your results deserve the best — we only use and stock professional-grade products from brands we trust.</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">Products We Love</h2>
+        <div class="w-12 h-[2px] bg-hot-pink mx-auto mb-6"></div>
+        <p class="text-ink/50">Your results deserve the best — we only use and stock professional-grade products from brands we trust.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {products.map((product) => (
-          <div class="group card-luxe gold-glow rounded-3xl overflow-hidden">
+          <div class="group bg-ink overflow-hidden card-editorial border border-champagne/20 hover:border-hot-pink/40">
             <div class="overflow-hidden relative">
               <img
                 src={product.image}
                 alt={product.alt}
-                class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105"
+                class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
                 loading="lazy"
               />
-              <div class="absolute top-3 right-3 badge-frosted text-gold text-[10px]">In Salon</div>
+              <div class="absolute top-3 right-3 bg-champagne text-ink text-[8px] tracking-[0.3em] uppercase font-bold px-3 py-1.5">In Salon</div>
             </div>
             <div class="p-6">
-              <h3 class="font-serif text-xl mb-1">{product.name}</h3>
-              <p class="text-sm text-rich-black/50">{product.desc}</p>
+              <h3 class="font-display text-xl text-paper font-bold mb-1">{product.name}</h3>
+              <p class="text-sm text-paper/50">{product.desc}</p>
             </div>
           </div>
         ))}
