@@ -390,15 +390,15 @@ h1, h2, h3 {
 }
 
 .btn-primary:hover {
-  background: var(--color-ink);
-  box-shadow: 0 8px 32px rgba(10, 10, 10, 0.3);
+  background: #d63384;
+  box-shadow: 0 0 24px rgba(232, 67, 147, 0.4), 0 8px 32px rgba(10, 10, 10, 0.2);
   transform: translateY(-2px);
 }
 
 .btn-outline {
   display: inline-flex;
   align-items: center;
-  padding: 1rem 2.5rem;
+  padding: 1.05rem 2.75rem;
   border: 3px solid var(--color-ink);
   color: var(--color-ink);
   font-size: 0.6875rem;
@@ -436,13 +436,153 @@ h1, h2, h3 {
   font-size: clamp(6rem, 14vw, 16rem);
   font-weight: 900;
   color: var(--color-ink);
-  opacity: 0.03;
+  opacity: 0.06;
   pointer-events: none;
   user-select: none;
   line-height: 1;
   letter-spacing: 0.05em;
   white-space: nowrap;
   text-transform: uppercase;
+}
+
+/* ── Team card refinements ────────────────────────────────── */
+
+.team-carousel > div h3 {
+  margin-bottom: 0.25rem;
+}
+
+.team-carousel > div > p:last-child {
+  line-height: 1.6;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+}
+
+/* ── Review card refinements ─────────────────────────────── */
+
+.ba-slider + p {
+  line-height: 1.6;
+}
+
+/* ── Hero social proof stars ─────────────────────────────── */
+
+.hero-stars svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* ── Section padding tightening ──────────────────────────── */
+
+/* Tighten the divider to reduce dead space between sections */
+.divider-editorial {
+  padding: 1rem 0;
+}
+
+/* Slightly reduce large section padding on desktop for better rhythm */
+@media (min-width: 1024px) {
+  .py-28.lg\:py-40 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .py-28.lg\:py-36 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Subtle inner shadow on dark sections for depth */
+.bg-ink > .max-w-\[1400px\] {
+  position: relative;
+}
+
+/* ── Footer refinements ──────────────────────────────────── */
+
+footer {
+  letter-spacing: 0.02em;
+}
+
+footer p, footer li, footer address {
+  line-height: 1.7;
+}
+
+footer .text-\[11px\] {
+  font-size: 0.75rem;
+}
+
+footer input::placeholder {
+  color: rgba(250, 250, 250, 0.4);
+}
+
+/* ── Review quote cards ──────────────────────────────────── */
+
+.bg-ink.p-8 {
+  padding: 2rem 1.75rem;
+}
+
+/* ── Carousel arrow contrast ─────────────────────────────── */
+
+#team-prev,
+#team-next {
+  border-color: rgba(10, 10, 10, 0.35);
+  color: var(--color-ink);
+}
+
+#team-prev:hover,
+#team-next:hover {
+  border-color: var(--color-hot-pink);
+  background: var(--color-hot-pink);
+  color: white;
+}
+
+/* ── Before/After "Slide to Compare" label — subtle & compact ── */
+
+.ba-slider > .absolute.bg-hot-pink {
+  font-size: 7px;
+  padding: 4px 10px;
+  background: rgba(232, 67, 147, 0.65);
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.25em;
+}
+
+/* ── Before/After card bottom gradient for text readability ── */
+
+.ba-slider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.55), transparent);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ── Refined card / service card shadows ─────────────────── */
+
+.card-editorial,
+.bg-ink.p-8,
+section.bg-paper .grid a[class*="aspect-"] {
+  box-shadow: 0 2px 8px rgba(10, 10, 10, 0.06), 0 8px 24px rgba(10, 10, 10, 0.08);
+}
+
+.card-editorial:hover,
+.bg-ink.p-8:hover {
+  box-shadow: 0 12px 40px rgba(10, 10, 10, 0.14), 0 4px 12px rgba(10, 10, 10, 0.08);
+}
+
+/* ── Hero social proof bar — better visual integration ───── */
+
+.animate-fade-in .text-paper\/40 {
+  color: rgba(250, 250, 250, 0.55);
+  font-weight: 600;
+}
+
+.animate-fade-in {
+  padding: 0.75rem 1.25rem;
+  background: rgba(250, 250, 250, 0.04);
+  border: 1px solid rgba(250, 250, 250, 0.08);
+  border-radius: 0;
 }
 
 /* ── Reduced Motion ────────────────────────────────────────── */
