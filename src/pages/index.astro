@@ -41,57 +41,66 @@ const instagramImages = [
 
 <Layout title="Sydney CBD Hair Salon | LUMA Hair & Beauty" description="Walk out feeling like the best version of yourself. Award-winning hair, skin & beauty in Sydney CBD. Book your appointment at LUMA today.">
 
-  <!-- Hero Section — Full-bleed editorial -->
-  <section class="relative min-h-screen flex items-center bg-ink overflow-hidden">
-    <!-- Background image with overlay -->
+  <!-- Hero Section — Full-bleed luxury editorial -->
+  <section class="relative min-h-screen flex items-center justify-center bg-ink overflow-hidden">
+    <!-- Background image -->
     <div class="absolute inset-0">
       <img
-        src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&h=1080&fit=crop"
-        alt="Bold beauty and fashion portrait — striking hair and makeup inspiration at LUMA Hair and Beauty Sydney"
-        class="w-full h-full object-cover opacity-50"
+        src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&h=1080&fit=crop"
+        alt="Glamorous woman with perfectly styled hair in a luxury salon setting — LUMA Hair and Beauty Sydney"
+        class="w-full h-full object-cover"
         loading="eager"
       />
-      <div class="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/70 to-ink/30"></div>
+      <!-- Heavy dark overlay for text contrast -->
+      <div class="absolute inset-0 bg-ink/75"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/60"></div>
     </div>
-    <span class="watermark -bottom-8 -right-4 text-paper">LUMA</span>
 
-    <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full py-32 lg:py-0">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="lg:py-20">
-          <div class="animate-slide-up">
-            <span class="inline-flex items-center gap-3 mb-6">
-              <span class="w-10 h-[2px] bg-hot-pink"></span>
-              <span class="text-[10px] tracking-[0.4em] uppercase text-hot-pink font-bold">Est. 2017 · Sydney CBD</span>
-            </span>
-          </div>
-          <h1 class="font-display text-6xl sm:text-7xl lg:text-9xl font-black leading-[0.9] tracking-tight text-paper mb-8 animate-slide-up-delay-1">
-            Walk Out<br />Feeling<br /><span class="italic text-hot-pink text-[1.2em]">Incredible</span>
-          </h1>
-          <p class="text-lg text-paper/60 max-w-lg mb-10 leading-relaxed animate-slide-up-delay-2">
-            Award-winning hair, skin, and beauty in Sydney CBD. You deserve to look in the mirror and love what you see — we make that happen.
-          </p>
-          <div class="flex flex-wrap gap-4 animate-slide-up-delay-3">
-            <a href="/book" class="btn-primary">
-              Book Your Appointment
-            </a>
-            <a href="/services" class="inline-flex items-center px-10 py-4 border-2 border-paper/30 text-paper text-[11px] tracking-[0.25em] uppercase font-bold hover:border-hot-pink hover:text-hot-pink transition-all duration-300">
-              Find Your Look
-            </a>
-          </div>
-          <div class="hero-social-proof mt-16 inline-flex items-center gap-4 animate-fade-in bg-ink px-6 py-3 border-l-4 border-hot-pink">
-            <div class="flex items-center gap-1">
-              {Array.from({ length: 5 }).map(() => (
-                <svg class="w-4 h-4 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              ))}
-            </div>
-            <span class="text-xs text-paper/70 tracking-wider uppercase font-bold">200+ Five-Star Reviews</span>
-          </div>
+    <div class="relative text-center w-full px-6 lg:px-10 py-32 lg:py-40">
+      <!-- Overline -->
+      <div class="animate-slide-up mb-8">
+        <span class="inline-flex items-center gap-4">
+          <span class="w-12 h-[1px] bg-hot-pink"></span>
+          <span class="text-[11px] tracking-[0.5em] uppercase text-hot-pink font-bold">Est. 2017 · Sydney CBD</span>
+          <span class="w-12 h-[1px] bg-hot-pink"></span>
+        </span>
+      </div>
+
+      <!-- Massive headline -->
+      <h1 class="font-display font-black leading-[0.85] tracking-tight text-paper mb-10 animate-slide-up-delay-1" style="font-size: clamp(3.5rem, 10vw, 11rem);">
+        Walk Out<br />Feeling<br />
+        <span class="italic text-hot-pink" style="font-size: 1.35em; line-height: 1;">Incredible</span>
+      </h1>
+
+      <!-- Subline -->
+      <p class="text-lg sm:text-xl text-paper/55 max-w-2xl mx-auto mb-12 leading-relaxed animate-slide-up-delay-2">
+        Award-winning hair, skin, and beauty in Sydney CBD. You deserve to look in the mirror and love what you see — we make that happen.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap justify-center gap-5 animate-slide-up-delay-3">
+        <a href="/book" class="btn-primary text-sm tracking-[0.2em] px-12 py-5">
+          Book Your Appointment
+        </a>
+        <a href="/services" class="inline-flex items-center px-12 py-5 border-2 border-paper/30 text-paper text-sm tracking-[0.2em] uppercase font-bold hover:border-hot-pink hover:text-hot-pink transition-all duration-300">
+          View Services
+        </a>
+      </div>
+
+      <!-- Social proof bar -->
+      <div class="mt-20 inline-flex items-center gap-5 animate-fade-in bg-ink/80 backdrop-blur-sm px-8 py-4 border border-paper/10">
+        <div class="flex items-center gap-1">
+          {Array.from({ length: 5 }).map(() => (
+            <svg class="w-4 h-4 text-champagne" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          ))}
         </div>
-        <div class="hidden lg:flex justify-end">
-          <div class="scroll-indicator mt-auto">
-            <svg class="w-5 h-5 text-hot-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-          </div>
-        </div>
+        <span class="w-px h-5 bg-paper/20"></span>
+        <span class="text-xs text-paper/70 tracking-[0.2em] uppercase font-bold">200+ Five-Star Reviews</span>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-indicator">
+        <svg class="w-5 h-5 text-hot-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
       </div>
     </div>
   </section>

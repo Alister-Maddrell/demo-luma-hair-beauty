@@ -67,7 +67,7 @@ const { title, description = 'Award-winning Sydney CBD hair salon offering exper
   </head>
   <body class="editorial-grain bg-paper text-ink font-body antialiased">
     <Nav />
-    <main class="pt-0">
+    <main>
       <slot />
     </main>
     <Footer />
@@ -86,6 +86,13 @@ const { title, description = 'Award-winning Sydney CBD hair salon offering exper
         { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
       );
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      // Fallback: force reveal on elements still hidden after 3s (e.g. if already in viewport)
+      setTimeout(() => {
+        document.querySelectorAll('.reveal:not(.visible)').forEach((el) => {
+          el.classList.add('visible');
+        });
+      }, 3000);
     </script>
     <script>
       if (new URLSearchParams(window.location.search).has('preview')) {
