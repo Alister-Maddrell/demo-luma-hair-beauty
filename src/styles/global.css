@@ -38,6 +38,20 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 
+/* Premium display heading refinements */
+h1 {
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  letter-spacing: -0.025em;
+}
+
+.font-display {
+  text-rendering: geometricPrecision;
+}
+
 .section-overline {
   display: inline-flex;
   align-items: center;
@@ -54,7 +68,7 @@ h1, h2, h3 {
   content: '';
   width: 3rem;
   height: 2px;
-  background: var(--color-hot-pink);
+  background: linear-gradient(90deg, var(--color-hot-pink), #c2185b);
 }
 
 /* ── Grain Overlay — high-contrast ─────────────────────────── */
@@ -576,6 +590,317 @@ section.bg-paper .grid a[class*="aspect-"] {
 .hero-social-proof {
   background: var(--color-ink);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Premium Pink Gradient Accents ─────────────────────────── */
+
+.bg-hot-pink,
+[class*="bg-hot-pink"] {
+  background: linear-gradient(135deg, #E84393, #c2185b) !important;
+}
+
+/* ── Button Premium Polish ────────────────────────────────── */
+
+.btn-primary {
+  background: linear-gradient(135deg, #E84393 0%, #c2185b 100%);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(232, 67, 147, 0.2);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #d63384 0%, #a01560 100%);
+  box-shadow: 0 0 30px rgba(232, 67, 147, 0.45), 0 8px 32px rgba(10, 10, 10, 0.25);
+}
+
+.btn-outline {
+  border-radius: 2px;
+  position: relative;
+}
+
+.btn-outline:hover {
+  box-shadow: 0 8px 24px rgba(10, 10, 10, 0.12);
+}
+
+/* ── Hero "Incredible" text glow ──────────────────────────── */
+
+h1 .italic.text-hot-pink,
+h1 span.italic {
+  background: linear-gradient(135deg, #E84393, #ff6fb5, #c2185b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 40px rgba(232, 67, 147, 0.3));
+}
+
+/* ── Dark Section Depth — radial gradient backgrounds ─────── */
+
+section.bg-ink,
+.bg-ink {
+  background: radial-gradient(ellipse at 30% 20%, #1a1a1a 0%, #0A0A0A 60%, #050505 100%);
+}
+
+/* ── Gallery / Transformation Cards — Premium shadows & hover */
+
+.ba-slider {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(232, 67, 147, 0.08);
+  transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.5s ease,
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ba-slider:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(232, 67, 147, 0.12);
+  border-color: rgba(232, 67, 147, 0.2);
+  transform: translateY(-4px);
+}
+
+/* ── Service Category Cards — Premium hover with smooth zoom ─ */
+
+section.bg-paper .grid a[class*="aspect-"] {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+section.bg-paper .grid a[class*="aspect-"]:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(197, 165, 90, 0.3);
+}
+
+/* ── Section Transitions — More generous spacing ──────────── */
+
+section.py-28 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+@media (min-width: 1024px) {
+  section.py-28.lg\:py-40 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  section.py-28.lg\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}
+
+/* ── Review Cards — Premium refinement ────────────────────── */
+
+.bg-ink.p-8 {
+  background: radial-gradient(ellipse at top left, #1e1e1e, #0A0A0A 70%);
+  border: 1px solid rgba(197, 165, 90, 0.12);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bg-ink.p-8:hover {
+  border-color: rgba(232, 67, 147, 0.35);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2), 0 0 24px rgba(232, 67, 147, 0.06);
+  transform: translateY(-4px);
+}
+
+.bg-ink.p-8 p.italic {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  letter-spacing: 0.005em;
+}
+
+/* ── Nav Premium Styling ──────────────────────────────────── */
+
+#main-nav {
+  backdrop-filter: blur(12px);
+  background: rgba(250, 250, 250, 0.92);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.04);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#main-nav a[class*="tracking-"] {
+  position: relative;
+}
+
+#main-nav .hidden.md\:flex a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--color-hot-pink), #c2185b);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#main-nav .hidden.md\:flex a:hover::after,
+#main-nav .hidden.md\:flex a.text-hot-pink::after {
+  width: 100%;
+}
+
+/* Nav CTA button gradient */
+#main-nav a[href="/book"].bg-hot-pink,
+#main-nav a.bg-hot-pink {
+  background: linear-gradient(135deg, #E84393, #c2185b) !important;
+  border-radius: 2px;
+  box-shadow: 0 2px 12px rgba(232, 67, 147, 0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#main-nav a[href="/book"].bg-hot-pink:hover,
+#main-nav a.bg-hot-pink:hover {
+  box-shadow: 0 4px 20px rgba(232, 67, 147, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Mobile menu premium transitions */
+#mobile-menu {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: radial-gradient(ellipse at center, #1a1a1a, #0A0A0A);
+}
+
+#mobile-menu a {
+  transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+#mobile-menu a:hover {
+  letter-spacing: 0.15em;
+}
+
+/* ── Footer Premium Polish ────────────────────────────────── */
+
+footer {
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+  background: radial-gradient(ellipse at 50% 0%, #151515, #0A0A0A 70%);
+}
+
+footer h4 {
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+footer h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2rem;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--color-hot-pink), transparent);
+}
+
+footer .grid {
+  padding-bottom: 4rem;
+}
+
+footer input[type="email"] {
+  border-radius: 2px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer input[type="email"]:focus {
+  box-shadow: 0 0 0 3px rgba(232, 67, 147, 0.15);
+}
+
+footer button[type="submit"] {
+  background: linear-gradient(135deg, #E84393, #c2185b);
+  border-radius: 2px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+footer button[type="submit"]:hover {
+  box-shadow: 0 4px 16px rgba(232, 67, 147, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Footer bottom text breathing room */
+footer .pt-8.text-center {
+  padding-top: 2rem;
+}
+
+/* ── Team Section Card Polish ─────────────────────────────── */
+
+.team-carousel > div {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-carousel > div:hover {
+  transform: translateY(-4px);
+}
+
+.team-carousel > div .relative.overflow-hidden {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.4s ease;
+}
+
+.team-carousel > div:hover .relative.overflow-hidden {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Newsletter Section Polish ────────────────────────────── */
+
+section.bg-blush {
+  background: radial-gradient(ellipse at center, #fdf0f0, #FAE5E5 70%);
+}
+
+section.bg-blush input[type="email"] {
+  border-radius: 2px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.bg-blush input[type="email"]:focus {
+  box-shadow: 0 0 0 3px rgba(232, 67, 147, 0.12);
+}
+
+/* ── Instagram Strip Premium Hover ────────────────────────── */
+
+.full-bleed-strip a {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.full-bleed-strip a:hover {
+  z-index: 2;
+}
+
+/* ── Social Proof Bar — Premium Glass ─────────────────────── */
+
+.animate-fade-in.bg-ink\/80 {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(250, 250, 250, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Divider Polish ───────────────────────────────────────── */
+
+.divider-editorial span {
+  background: linear-gradient(135deg, var(--color-hot-pink), #c2185b);
+}
+
+/* ── Watermark Refinement ─────────────────────────────────── */
+
+.watermark {
+  opacity: 0.03;
+  background: linear-gradient(180deg, var(--color-ink), transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ── Reduced Motion ────────────────────────────────────────── */
